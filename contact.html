@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact Us | Tourza</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    body{
+      font-family:'Manrope', sans-serif;
+      background:#020617;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .serif{
+      font-family:'Playfair Display', serif;
+    }
+
+    .navbar-gradient{
+      background: linear-gradient(to right, #081226, #132850);
+    }
+
+    .footer-gradient{
+      background: linear-gradient(to right, #020817, #07142d);
+    }
+
+    .hero-section{
+      background:
+      linear-gradient(rgba(2,8,23,0.78), rgba(2,8,23,0.78)),
+      url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .glass-card{
+      background: rgba(15, 23, 42, 0.45);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .glass-card-light{
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .gold-text{
+      background: linear-gradient(to right, #facc15, #d4a64f);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .social-icon{
+      transition:0.35s ease;
+    }
+
+    .instagram:hover{
+      background:#ec4899;
+      box-shadow:0 0 25px rgba(236,72,153,0.6);
+    }
+
+    .facebook:hover{
+      background:#2563eb;
+      box-shadow:0 0 25px rgba(37,99,235,0.6);
+    }
+
+    .linkedin:hover{
+      background:#0ea5e9;
+      box-shadow:0 0 25px rgba(14,165,233,0.6);
+    }
+
+    .contact-card{
+      transition:0.35s ease;
+    }
+
+    .contact-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(255,255,255,0.15);
+    }
+
+    .pulse-dot{
+      animation:pulse 1.5s infinite;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+        opacity:1;
+      }
+      50%{
+        transform:scale(1.3);
+        opacity:0.7;
+      }
+      100%{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+  
+    .mobile-nav{
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 80px);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-nav.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-full border-2 border-yellow-400 overflow-hidden">
+          <img src="logo.png" width="500" height="500" style="image-rendering: -webkit-optimize-contrast;" class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 shadow-sm" alt="Tourza logo">
+        </div>
+
+        <span class="text-white text-2xl font-extrabold tracking-wide">
+          Tourza
+        </span>
+
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-10 text-white text-sm font-bold">
+
+        <a href="index.html" class="hover:text-blue-300 transition">
+          Home
+        </a>
+
+        <a href="tours.html" class="hover:text-blue-300 transition">
+          Tours
+        </a>
+
+        <a href="about.html" class="hover:text-blue-300 transition">
+          About
+        </a>
+
+        <a href="services.html" class="hover:text-blue-300 transition">
+          Services
+        </a>
+
+        <a href="contact.html" class="text-yellow-400">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- Button -->
+      <a
+        href="contact.html"
+        class="hidden md:flex bg-blue-600 hover:bg-blue-700 transition text-white px-7 py-3 rounded-full text-sm font-extrabold"
+      >
+        Book Now
+      </a>
+
+      <!-- Mobile -->
+      <button class="mobile-menu-button md:hidden text-white" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+      <div class="mobile-nav md:hidden mt-4 rounded-3xl bg-[#081226]/95 px-5 py-5 text-white shadow-xl">
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="block hover:text-blue-300 transition">Home</a>
+          <a href="tours.html" class="block hover:text-blue-300 transition">Tours</a>
+          <a href="about.html" class="block hover:text-blue-300 transition">About</a>
+          <a href="services.html" class="block hover:text-blue-300 transition">Services</a>
+          <a href="contact.html" class="block hover:text-blue-300 transition">Contact</a>
+          <a href="contact.html" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-extrabold mt-3">Book Now</a>
+        </nav>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-section py-32 md:py-44 text-center relative overflow-hidden">
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+
+    <h1 class="text-6xl md:text-8xl leading-none font-light">
+
+      <span class="text-white serif">
+        Let's
+      </span>
+
+      <br>
+
+      <span class="gold-text serif font-bold">
+        Connect
+      </span>
+
+    </h1>
+
+    <p class="text-gray-300 text-lg md:text-xl leading-9 mt-10 max-w-3xl mx-auto">
+
+      Your next adventure begins with a conversation.
+      Reach out and let our travel experts craft something extraordinary for you.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT CARDS ================= -->
+
+<section class="py-24 bg-[#020817]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ================= EMAIL ================= -->
+
+      <div class="glass-card contact-card rounded-3xl p-10">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#fff8dc10] border border-white/5 flex items-center justify-center mb-8">
+
+          <i data-lucide="mail" class="w-7 h-7 text-yellow-400"></i>
+
+        </div>
+
+        <h3 class="text-3xl font-extrabold mb-5">
+          Email Us
+        </h3>
+
+        <p class="text-gray-300 leading-8 text-[15px] mb-7">
+
+          Send us your travel dreams and we'll respond within 24 hours.
+
+        </p>
+
+        <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=travelwithtourza@gmail.com&su=Inquiry%20from%20Tourza%20Website"
+  target="_blank"
+  class="text-yellow-400 font-bold hover:text-yellow-300 transition duration-300"
+>
+  travelwithtourza@gmail.com
+</a>
+
+      </div>
+
+      <!-- ================= WHATSAPP ================= -->
+
+      <div class="glass-card contact-card rounded-3xl p-10">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#22c55e15] border border-white/5 flex items-center justify-center mb-8">
+
+          <i data-lucide="message-circle" class="w-7 h-7 text-green-400"></i>
+
+        </div>
+
+        <h3 class="text-3xl font-extrabold mb-5">
+          WhatsApp
+        </h3>
+
+        <p class="text-gray-300 leading-8 text-[15px] mb-7">
+
+          Instant support for quick queries and bookings.
+          Reach us on this number.
+
+        </p>
+
+        <div class="space-y-3">
+
+      
+          <a
+            href="https://wa.me/918796163086?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-green-400 font-bold hover:text-green-300 transition"
+          >
+            +91 8796163086
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ================= VISIT ================= -->
+
+      <div class="glass-card contact-card rounded-3xl p-10">
+
+        <div class="w-16 h-16 rounded-2xl bg-[#3b82f615] border border-white/5 flex items-center justify-center mb-8">
+
+          <i data-lucide="map-pin" class="w-7 h-7 text-blue-400"></i>
+
+        </div>
+
+        <h3 class="text-3xl font-extrabold mb-5">
+          Visit Us
+        </h3>
+
+        <p class="text-gray-300 leading-8 text-[15px] mb-7">
+
+          Come meet our team in person to plan your perfect journey.
+
+        </p>
+
+        <p class="text-white font-bold">
+          Gurugram, Haryana, India
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= HOURS SECTION ================= -->
+
+<section class="py-24 bg-[#071327]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- LEFT -->
+      <div>
+
+        <h2 class="text-5xl font-light leading-tight">
+
+          We're Here
+          <span class="gold-text serif font-semibold">
+            When You Need Us
+          </span>
+
+        </h2>
+
+        <p class="text-gray-400 text-lg leading-9 mt-6">
+
+          No matter the time zone, our team is ready to assist.
+
+        </p>
+
+        <!-- Hours -->
+        <div class="space-y-8 mt-12">
+
+          <div class="border-l-4 border-yellow-400 pl-6">
+
+            <h3 class="text-2xl font-extrabold">
+              Monday – Saturday
+            </h3>
+
+            <p class="text-gray-400 mt-2 text-lg">
+              9:00 AM – 8:00 PM IST
+            </p>
+
+          </div>
+
+          <div class="border-l-4 border-yellow-400 pl-6">
+
+            <h3 class="text-2xl font-extrabold">
+              Sunday
+            </h3>
+
+            <p class="text-gray-400 mt-2 text-lg">
+              10:00 AM – 4:00 PM IST
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="glass-card-light rounded-3xl p-10">
+
+        <!-- Live Header -->
+        <div class="flex items-center gap-4 mb-8">
+
+          <div class="w-4 h-4 bg-green-400 rounded-full pulse-dot"></div>
+
+          <h3 class="text-3xl font-extrabold">
+            Fast Response Time
+          </h3>
+
+        </div>
+
+        <p class="text-gray-300 leading-9 text-lg">
+
+          We understand that travel plans can't wait.
+          That's why we prioritize every inquiry and aim to respond within
+          <span class="text-white font-bold">
+            2 hours
+          </span>
+          during business hours.
+
+          For urgent requests, WhatsApp is your fastest channel.
+
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-4 mt-10">
+
+          <div class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-semibold">
+            &lt; 30 min — WhatsApp
+          </div>
+
+          <div class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-semibold">
+            &lt; 24 hrs — Email
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SOCIAL SECTION ================= -->
+
+<section class="py-24 text-center bg-[#020817]">
+
+  <div class="max-w-4xl mx-auto px-6">
+
+    <h2 class="text-5xl font-light leading-tight">
+
+      Follow Our
+      <span class="gold-text serif font-semibold">
+        Journeys
+      </span>
+
+    </h2>
+
+    <p class="text-gray-400 text-lg leading-9 mt-6 max-w-3xl mx-auto">
+
+      Get inspired by real travel stories, behind-the-scenes moments,
+      and exclusive offers shared on our channels.
+
+    </p>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center mt-14">
+
+      <a
+        href="https://www.instagram.com/travelwithtourza"
+        target="_blank"
+        class="inline-flex items-center justify-center"
+      >
+
+        <img src="insta-icon.png" alt="Instagram icon" class="w-16 h-16 rounded-2xl object-contain p-3 bg-white/10 hover:scale-110 transition-transform" />
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#020817] text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+
+          <img
+            src="logo.png"
+            alt="Tourza Logo"
+            class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 flex-shrink-0"
+          >
+
+          <h2 class="text-white text-2xl font-extrabold tracking-wide">
+            Tourza
+          </h2>
+
+        </div>
+
+        <p class="text-sm leading-8 text-gray-400">
+          Extraordinary travel experiences crafted for every explorer. From authentic budget stays to premium getaways, we make the world accessible.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-4 text-sm">
+
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            travelwithtourza@gmail.com
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +91 9217547722, +91 87961 63086
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Gurugram, Haryana, India
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Newsletter
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-5 leading-7">
+          Get exclusive travel updates and curated destination inspiration.
+        </p>
+
+        <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+
+          <input id="newsletter-email"
+            type="email"
+            placeholder="Your email"
+            class="w-full bg-[#0f172a] border border-gray-700 px-4 py-3 outline-none"
+          />
+
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition px-5 font-semibold">
+            Subscribe
+          </button>
+
+        </form>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 mt-6">
+
+          <a href="https://www.instagram.com/travelwithtourza" target="_blank" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="insta-icon.png" alt="Instagram icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+          <a href="https://wa.me/919217547722?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="whatsapp-icon.png" alt="WhatsApp icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+
+      <p>
+        © 2026 Tourza. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+
+        <a href="#" class="hover:text-white">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-white">
+          Terms & Conditions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('newsletter-email');
+    if (emailInput) {
+      alert('Thank you for subscribing to Tourza! Check your email soon.');
+      emailInput.value = '';
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+    
+    if (!menuButton || !mobileNav) return;
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileNav.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuButton.contains(e.target)) {
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

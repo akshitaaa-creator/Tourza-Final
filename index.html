@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tourza - Memorable Travel Experiences</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Premium Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylish & Professional Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    *{
+      scroll-behavior: smooth;
+    }
+
+    body{
+      font-family: 'Manrope', sans-serif;
+      background:#f5f5f5;
+      color:#111827;
+    }
+
+    .hero-overlay{
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.40)
+      );
+    }
+
+    .destination-card img,
+    .gallery-img{
+      transition: 0.5s ease;
+    }
+
+    .destination-card:hover img,
+    .gallery-item:hover .gallery-img{
+      transform: scale(1.05);
+    }
+
+    .travel-style-card{
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+    }
+
+    .travel-style-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 20px 55px rgba(59,130,246,0.20);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .gradient-bg{
+      background: linear-gradient(to right, #081226, #0f1f44);
+    }
+
+  
+    .mobile-nav{
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 80px);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-nav.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="absolute top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-full border-2 border-yellow-400 overflow-hidden">
+          <img src="logo.png" width="500" height="500" style="image-rendering: -webkit-optimize-contrast;" class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400" alt="Tourza logo">
+        </div>
+
+        <span class="text-white text-xl font-extrabold tracking-wide">
+          Tourza
+        </span>
+
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-10 text-white text-sm font-semibold">
+
+        <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+        <a href="tours.html" class="hover:text-blue-300 transition">Tours</a>
+        <a href="about.html" class="hover:text-blue-300 transition">About</a>
+        <a href="services.html" class="hover:text-blue-300 transition">Services</a>
+        <a href="contact.html" class="hover:text-blue-300 transition">Contact</a>
+
+      </nav>
+
+      <!-- Button -->
+      <a href="contact.html" class="hidden md:block bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-bold">
+        Book Now
+      </a>
+
+      <!-- Mobile -->
+      <button class="mobile-menu-button md:hidden text-white" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+      <div class="mobile-nav md:hidden mt-4 rounded-3xl bg-[#081226]/95 px-5 py-5 text-white shadow-xl">
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="block hover:text-blue-300 transition">Home</a>
+          <a href="tours.html" class="block hover:text-blue-300 transition">Tours</a>
+          <a href="about.html" class="block hover:text-blue-300 transition">About</a>
+          <a href="services.html" class="block hover:text-blue-300 transition">Services</a>
+          <a href="contact.html" class="block hover:text-blue-300 transition">Contact</a>
+          <a href="contact.html" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-extrabold mt-3">Book Now</a>
+        </nav>
+      </div>
+
+
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="relative h-screen min-h-[720px] overflow-hidden">
+
+  <img
+    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt=""
+  />
+
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <div class="relative z-10 h-full flex items-center justify-center text-center px-6">
+
+    <div class="max-w-5xl">
+
+      <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+        Explore The World
+        <br />
+        With Tourza
+      </h1>
+
+      <p class="text-gray-200 text-lg md:text-xl mt-7 max-w-2xl mx-auto leading-8">
+        From handpicked budget adventures to premium global getaways, we craft unforgettable journeys tailored to your style and pocket.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-5 mt-10">
+
+        <a href="tours.html" class="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-md text-white font-bold text-center">
+          Explore Packages
+        </a>
+
+        <a href="contact.html" class="border border-white hover:bg-white hover:text-black transition px-8 py-4 rounded-md text-white font-bold">
+          Plan Your Trip
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="py-24 bg-[#f4f4f4]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <p class="uppercase tracking-[5px] text-gray-500 text-xs mb-10">
+      Gallery
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+      <!-- Forest -->
+      <div class="gallery-item md:col-span-6 overflow-hidden">
+
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format&fit=crop"
+          class="gallery-img w-full h-full object-cover"
+          alt=""
+        />
+
+        <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+          Forest Escapes
+        </p>
+
+      </div>
+
+      <!-- Boat -->
+      <div class="gallery-item md:col-span-3 overflow-hidden">
+
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1973&auto=format&fit=crop"
+          class="gallery-img w-full h-full object-cover"
+          alt=""
+        />
+
+        <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+          Tropical Luxury
+        </p>
+
+      </div>
+
+      <!-- Right -->
+      <div class="md:col-span-3 flex flex-col gap-5">
+
+        <div class="gallery-item overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop"
+            class="gallery-img w-full h-[180px] object-cover"
+            alt=""
+          />
+
+          <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+            Nature
+          </p>
+
+        </div>
+
+        <div class="gallery-item overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop"
+            class="gallery-img w-full h-[180px] object-cover"
+            alt=""
+          />
+
+          <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+            Mountains
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-5 mt-5">
+
+      <div class="gallery-item md:col-span-9 overflow-hidden">
+
+        <img
+          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1974&auto=format&fit=crop"
+          class="gallery-img w-full h-[260px] object-cover"
+          alt=""
+        />
+
+        <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+          Desert Adventure
+        </p>
+
+      </div>
+
+      <div class="md:col-span-3 bg-white flex items-center justify-center p-10">
+
+        <div class="text-center">
+
+          <h3 class="text-3xl font-extrabold text-blue-700">
+            Luxury
+          </h3>
+
+          <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-3">
+            Travel Planning
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <p class="uppercase tracking-[5px] text-gray-500 text-xs mb-6">
+          About Tourza
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+          Crafted for those who seek more.
+        </h2>
+
+        <a href="about.html" class="mt-8 inline-flex bg-[#0f172a] hover:bg-black transition text-white px-7 py-4 rounded-md font-bold">
+          Explore Our Story →
+        </a>
+
+      </div>
+
+      <div>
+
+        <p class="text-gray-600 leading-9 text-lg">
+          Tourza is a premium travel brand dedicated to curating immersive experiences that combine authentic culture, refined luxury, and breathtaking destinations around the globe.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Traditional Indian Culture Slideshow -->
+    <div id="culture-slideshow" class="mt-16 overflow-hidden relative w-full h-[600px]">
+
+      <img src="culture-1.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" alt="Traditional Indian Culture 1">
+      <img src="culture-2.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Traditional Indian Culture 2">
+      <img src="culture-3.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Traditional Indian Culture 3">
+      <img src="culture-4.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Traditional Indian Culture 4">
+
+    </div>
+
+    <!-- Features -->
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+
+      <div class="border border-gray-200 p-8">
+
+        <h3 class="text-xl font-extrabold mb-4">
+          Curated Experiences
+        </h3>
+
+        <p class="text-gray-600 leading-8 text-sm">
+          Carefully designed travel experiences tailored for immersive and memorable adventures.
+        </p>
+
+      </div>
+
+      <div class="border border-gray-200 p-8">
+
+        <h3 class="text-xl font-extrabold mb-4">
+          Personalized Journeys
+        </h3>
+
+        <p class="text-gray-600 leading-8 text-sm">
+          Custom itineraries created around your comfort, style, and travel dreams.
+        </p>
+
+      </div>
+
+      <div class="border border-gray-200 p-8">
+
+        <h3 class="text-xl font-extrabold mb-4">
+          Premium Support
+        </h3>
+
+        <p class="text-gray-600 leading-8 text-sm">
+          Dedicated travel guidance and support from planning to your return journey.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= EXPLORE BY TRAVEL STYLE ================= -->
+
+<section class="py-24 bg-[#020817]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="text-center mb-16">
+
+      <p class="uppercase tracking-[5px] text-gray-400 text-xs">
+        Explore
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-4 tracking-tight text-white">
+        How Do You Want To Travel?
+      </h2>
+
+      <p class="text-gray-300 mt-5 max-w-2xl mx-auto leading-8">
+        Whether it is a quick budget getaway or a high-end retreat, we have the perfect plan for you.
+      </p>
+
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <a href="tours.html" class="travel-style-card rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-blue-400/70 hover:shadow-[0_0_35px_rgba(59,130,246,0.25)]">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 text-yellow-400 text-3xl mb-6">
+          <i data-lucide="map" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-extrabold text-white mb-3">Backpack & Budget</h3>
+        <p class="text-gray-300 leading-8 text-sm">Authentic experiences for the savvy traveler.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold">Explore Tours <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </a>
+
+      <a href="tours.html" class="travel-style-card rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-yellow-400/70 hover:shadow-[0_0_35px_rgba(234,179,8,0.25)]">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 text-yellow-400 text-3xl mb-6">
+          <i data-lucide="sparkles" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-extrabold text-white mb-3">Premium Escapes</h3>
+        <p class="text-gray-300 leading-8 text-sm">Luxury and comfort tailored to your elegance.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold">Explore Tours <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </a>
+
+      <a href="tours.html" class="travel-style-card rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-blue-400/70 hover:shadow-[0_0_35px_rgba(59,130,246,0.25)]">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 text-yellow-400 text-3xl mb-6">
+          <i data-lucide="users" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-extrabold text-white mb-3">Family Fun</h3>
+        <p class="text-gray-300 leading-8 text-sm">Memorable journeys for all ages, designed with care.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold">Explore Tours <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </a>
+
+      <a href="tours.html" class="travel-style-card rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition hover:border-yellow-400/70 hover:shadow-[0_0_35px_rgba(234,179,8,0.25)]">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 text-yellow-400 text-3xl mb-6">
+          <i data-lucide="compass" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-extrabold text-white mb-3">Solo Expeditions</h3>
+        <p class="text-gray-300 leading-8 text-sm">Find yourself in the heart of the world's hidden gems.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-yellow-400 font-bold">Explore Tours <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE ================= -->
+
+<section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="text-center mb-16">
+
+      <p class="uppercase tracking-[5px] text-gray-500 text-xs">
+        Why Us
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-4">
+        Why Choose Tourza
+      </h2>
+
+      <p class="text-gray-600 mt-5 max-w-2xl mx-auto">
+        We deliver thoughtfully designed travel experiences with unmatched quality and care.
+      </p>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="border border-gray-200 p-8">
+
+        <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 mb-6">
+          <i data-lucide="badge-dollar-sign"></i>
+        </div>
+
+        <h3 class="font-extrabold text-lg">
+          Best Price Guarantee
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3 leading-7">
+          Exceptional value and premium experiences at competitive pricing.
+        </p>
+
+      </div>
+
+      <div class="border border-gray-200 p-8">
+
+        <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 mb-6">
+          <i data-lucide="headphones"></i>
+        </div>
+
+        <h3 class="font-extrabold text-lg">
+          24/7 Support
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3 leading-7">
+          Dedicated assistance whenever and wherever you travel.
+        </p>
+
+      </div>
+
+      <div class="border border-gray-200 p-8">
+
+        <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 mb-6">
+          <i data-lucide="shield-check"></i>
+        </div>
+
+        <h3 class="font-extrabold text-lg">
+          Secure Booking
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3 leading-7">
+          Safe and reliable booking systems for stress-free planning.
+        </p>
+
+      </div>
+
+      <div class="border border-gray-200 p-8">
+
+        <div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 mb-6">
+          <i data-lucide="clipboard-list"></i>
+        </div>
+
+        <h3 class="font-extrabold text-lg">
+          Custom Plans
+        </h3>
+
+        <p class="text-gray-600 text-sm mt-3 leading-7">
+          Every itinerary is personalized to match your travel style.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="py-24 bg-[#f4f4f4]">
+
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+
+      <p class="uppercase tracking-[5px] text-gray-500 text-xs">
+        Questions
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-4">
+        Frequently Asked Questions
+      </h2>
+
+    </div>
+
+    <div class="space-y-4">
+
+      <details class="bg-white border border-gray-200 p-5">
+        <summary class="cursor-pointer font-bold">
+          How do I book a package?
+        </summary>
+        <p class="mt-4 text-gray-600 leading-8">
+          You can easily book directly through our website or speak with our travel specialists.
+        </p>
+      </details>
+
+      <details class="bg-white border border-gray-200 p-5">
+        <summary class="cursor-pointer font-bold">
+          What is your cancellation policy?
+        </summary>
+        <p class="mt-4 text-gray-600 leading-8">
+          Flexible cancellation policies are available depending on the selected package.
+        </p>
+      </details>
+
+      <details class="bg-white border border-gray-200 p-5">
+        <summary class="cursor-pointer font-bold">
+          Do you offer group discounts?
+        </summary>
+        <p class="mt-4 text-gray-600 leading-8">
+          Yes, we provide customized discounts for families and corporate groups.
+        </p>
+      </details>
+
+      <details class="bg-white border border-gray-200 p-5">
+        <summary class="cursor-pointer font-bold">
+          Is travel insurance included?
+        </summary>
+        <p class="mt-4 text-gray-600 leading-8">
+          Travel insurance can be included optionally with your chosen travel plan.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="py-28 gradient-bg text-white text-center">
+
+  <div class="max-w-3xl mx-auto px-6">
+
+    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      Ready for your next adventure?
+    </h2>
+
+    <p class="text-gray-300 mt-6 leading-8 text-lg">
+      Let Tourza craft a journey that feels unforgettable, personal, and extraordinary.
+    </p>
+
+    <a href="contact.html" class="mt-10 inline-flex bg-blue-600 hover:bg-blue-700 transition px-9 py-4 rounded-md font-bold text-white">
+      Start Planning
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#020817] text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+
+    <img
+        src="logo.png"
+        alt="Tourza Logo"
+        class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 flex-shrink-0"
+    >
+
+    <h2 class="text-white text-2xl font-extrabold tracking-wide">
+        Tourza
+    </h2>
+
+</div>
+
+        <p class="text-sm leading-8 text-gray-400">
+          Extraordinary travel experiences crafted for every explorer. From authentic budget stays to premium getaways, we make the world accessible.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-4 text-sm">
+
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            travelwithtourza@gmail.com
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +91 9217547722, +91 87961 63086
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Gurugram, Haryana, India
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Newsletter
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-5 leading-7">
+          Get exclusive travel updates and curated destination inspiration.
+        </p>
+
+        <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+
+          <input id="newsletter-email"
+            type="email"
+            placeholder="Your email"
+            class="w-full bg-[#0f172a] border border-gray-700 px-4 py-3 outline-none"
+          />
+
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition px-5 font-semibold">
+            Subscribe
+          </button>
+
+        </form>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 mt-6">
+
+          <a href="https://www.instagram.com/travelwithtourza" target="_blank" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="insta-icon.png" alt="Instagram icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+          <a href="https://wa.me/919217547722?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="whatsapp-icon.png" alt="WhatsApp icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+
+      <p>
+        © 2026 Tourza. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+
+        <a href="#" class="hover:text-white">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-white">
+          Terms & Conditions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+  const images = document.querySelectorAll('#culture-slideshow img');
+  let currentIndex = 0;
+
+  function showNextImage() {
+    images[currentIndex].classList.remove('opacity-100');
+    images[currentIndex].classList.add('opacity-0');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.remove('opacity-0');
+    images[currentIndex].classList.add('opacity-100');
+  }
+
+  setInterval(showNextImage, 3000); // 3 seconds
+</script>
+
+<script>
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('newsletter-email');
+    if (emailInput) {
+      alert('Thank you for subscribing to Tourza! Check your email soon.');
+      emailInput.value = '';
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+    
+    if (!menuButton || !mobileNav) return;
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileNav.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuButton.contains(e.target)) {
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

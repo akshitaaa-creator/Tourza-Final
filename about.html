@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>About Us | Tourza</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Manrope Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    body{
+      font-family:'Manrope',sans-serif;
+      background:#020817;
+      color:white;
+    }
+
+    .navbar-gradient{
+      background: linear-gradient(to right, #081226, #132850);
+    }
+
+    .footer-gradient{
+      background: linear-gradient(to right, #020817, #07142d);
+    }
+
+    .hero-gradient{
+      background:
+      radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(234,179,8,0.10), transparent 30%);
+    }
+
+    .glass-card{
+      background: rgba(15, 23, 42, 0.88);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .blue-text{
+      background: linear-gradient(to right, #60a5fa, #d6b15f);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .card-hover{
+      transition:0.35s ease;
+    }
+
+    .card-hover:hover{
+      transform: translateY(-6px);
+    }
+
+  
+    .mobile-nav{
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 80px);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-nav.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-full border-2 border-yellow-400 overflow-hidden">
+          <img src="logo.png" width="500" height="500" style="image-rendering: -webkit-optimize-contrast;" class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400" alt="Tourza logo">
+        </div>
+
+        <span class="text-white text-2xl font-extrabold tracking-wide">
+          Tourza
+        </span>
+
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-10 text-white text-sm font-bold">
+
+        <a href="index.html" class="hover:text-blue-300 transition">
+          Home
+        </a>
+
+        <a href="tours.html" class="hover:text-blue-300 transition">
+          Tours
+        </a>
+
+        <a href="about.html" class="text-yellow-400">
+          About
+        </a>
+
+        <a href="services.html" class="hover:text-blue-300 transition">
+          Services
+        </a>
+
+        <a href="contact.html" class="hover:text-blue-300 transition">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- Button -->
+      <a
+        href="contact.html"
+        class="hidden md:flex bg-blue-600 hover:bg-blue-700 transition text-white px-7 py-3 rounded-full text-sm font-extrabold"
+      >
+        Book Now
+      </a>
+
+      <!-- Mobile -->
+      <button class="mobile-menu-button md:hidden text-white" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+      <div class="mobile-nav md:hidden mt-4 rounded-3xl bg-[#081226]/95 px-5 py-5 text-white shadow-xl">
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="block hover:text-blue-300 transition">Home</a>
+          <a href="tours.html" class="block hover:text-blue-300 transition">Tours</a>
+          <a href="about.html" class="block hover:text-blue-300 transition">About</a>
+          <a href="services.html" class="block hover:text-blue-300 transition">Services</a>
+          <a href="contact.html" class="block hover:text-blue-300 transition">Contact</a>
+          <a href="contact.html" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-extrabold mt-3">Book Now</a>
+        </nav>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-gradient py-28 lg:py-36 text-center overflow-hidden">
+
+  <div class="max-w-5xl mx-auto px-6">
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+
+      Crafting
+      <span class="blue-text">Extraordinary</span>
+      Journeys
+
+    </h1>
+
+    <p class="text-gray-300 text-lg md:text-xl leading-9 mt-8 max-w-3xl mx-auto">
+
+      At Tourza, we believe every trip tells a story. Ours began with a simple idea —
+      to make luxury travel personal, seamless, and unforgettable.
+
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-5 mt-12">
+
+      <a
+        href="contact.html"
+        class="bg-yellow-400 hover:bg-yellow-500 transition text-black font-extrabold px-9 py-4 rounded-lg"
+      >
+        Start Your Journey
+      </a>
+
+      <a
+        href="contact.html"
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= OUR STORY ================= -->
+
+<section class="py-24 bg-[#081738]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="relative">
+
+        <img
+          src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1974&auto=format&fit=crop"
+          class="rounded-2xl shadow-2xl w-full"
+          alt="Hikers"
+        />
+
+        <!-- Badge -->
+        <div class="absolute -bottom-6 right-6 bg-yellow-400 text-black rounded-2xl px-8 py-5 shadow-2xl">
+
+          <h3 class="text-4xl font-extrabold leading-none">
+            Always
+          </h3>
+
+          <p class="text-sm mt-2 font-semibold">
+            Crafting Meaningful Journeys
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+
+        <h2 class="text-5xl font-extrabold leading-tight">
+
+          Our Story-
+          Built on
+          <span class="blue-text">
+            Passion
+          </span>
+          for Travel
+
+        </h2>
+
+        <div class="space-y-7 mt-10 text-gray-300 leading-9 text-lg">
+
+          <p>
+            Tourza was created with a passion for exploration and meaningful travel experiences.
+            We believe every journey should be more than just visiting places, 
+            it should create memories, inspire discovery, and bring people closer to the world around them.
+          </p>
+
+          <p>
+            Our goal is to build a modern travel brand that combines comfort,
+            adventure, and personalized experiences for every kind of traveler.
+            From relaxing getaways to exciting adventures, Tourza aims to make travel seamless, inspiring, and unforgettable.
+          </p>
+
+          <p>
+            Though we are just beginning our journey, our vision is global.
+            We are committed to curating thoughtfully designed travel experiences
+            to help travelers explore the world with confidence, comfort, and excitement.
+            Welcome to Tourza, where every journey begins with possibility.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= MISSION & VALUES ================= -->
+
+<section class="py-28 bg-[#020817]">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Heading -->
+    <div class="text-center mb-20">
+
+      <h2 class="text-5xl font-extrabold">
+        Our Mission & Values
+      </h2>
+
+      <p class="text-gray-400 text-lg mt-5">
+        The principles that guide every journey we craft.
+      </p>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Card -->
+      <div class="glass-card rounded-3xl p-10 text-center card-hover">
+
+        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mx-auto mb-8">
+
+          <i data-lucide="leaf" class="w-7 h-7 text-white"></i>
+
+        </div>
+
+        <h3 class="text-2xl font-extrabold mb-4">
+          Sustainability
+        </h3>
+
+        <p class="text-gray-400 leading-8">
+          We protect the places we love, promoting responsible tourism that gives back.
+        </p>
+
+      </div>
+
+      <!-- Card -->
+      <div class="glass-card rounded-3xl p-10 text-center card-hover">
+
+        <div class="w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-8">
+
+          <i data-lucide="heart" class="w-7 h-7 text-black"></i>
+
+        </div>
+
+        <h3 class="text-2xl font-extrabold mb-4">
+          Personalized Care
+        </h3>
+
+        <p class="text-gray-400 leading-8">
+          Every traveler is unique. We design trips that fit your story, not a template.
+        </p>
+
+      </div>
+
+      <!-- Card -->
+      <div class="glass-card rounded-3xl p-10 text-center card-hover">
+
+        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mx-auto mb-8">
+
+          <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
+
+        </div>
+
+        <h3 class="text-2xl font-extrabold mb-4">
+          Trust & Safety
+        </h3>
+
+        <p class="text-gray-400 leading-8">
+          Your security is our priority. We vet every partner and stay by your side 24/7.
+        </p>
+
+      </div>
+
+      <!-- Card -->
+      <div class="glass-card rounded-3xl p-10 text-center card-hover">
+
+        <div class="w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center mx-auto mb-8">
+
+          <i data-lucide="badge-dollar-sign" class="w-7 h-7 text-black"></i>
+
+        </div>
+
+        <h3 class="text-2xl font-extrabold mb-4">
+          Best Value
+        </h3>
+
+        <p class="text-gray-400 leading-8">
+          Luxury doesn’t have to break the bank. We find the finest experiences at fair prices.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+
+<section class="py-28 bg-[#081738]">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-20">
+
+      <h2 class="text-5xl font-extrabold">
+
+        Meet Our
+        <span class="blue-text">
+          Founders
+        </span>
+
+      </h2>
+
+      <p class="text-gray-400 text-lg mt-5">
+        The dreamers behind Tourza.
+      </p>
+
+    </div>
+
+    <!-- Founder Card -->
+    <div class="glass-card rounded-3xl p-10 md:p-14 mb-10">
+
+      <p class="text-gray-200 text-xl leading-10 italic">
+
+        "I started Tourza because I believe travel changes who we are.
+        Every trip should feel personal, inspiring, and effortless.
+        Our team pours heart into every detail, so you can focus on the adventure."
+
+      </p>
+
+      <div class="mt-10">
+
+        <h3 class="text-2xl font-extrabold">
+          Kartik Rao
+        </h3>
+
+        <p class="text-yellow-400 font-semibold mt-2">
+          Founder & CEO, Tourza
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Founder Card -->
+    <div class="glass-card rounded-3xl p-10 md:p-14">
+
+      <p class="text-gray-200 text-xl leading-10 italic">
+
+        "Tourza is founded to redefine how people experience the world.
+        Travel is not just about destinations, it's about the stories we collect along the way.
+        We are here to craft those stories with care and passion."
+
+      </p>
+
+      <div class="mt-10">
+
+        <h3 class="text-2xl font-extrabold">
+          Anjali Singh
+        </h3>
+
+        <p class="text-yellow-400 font-semibold mt-2">
+          Founder & CEO, Tourza
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="hero-gradient py-28 text-center">
+
+  <div class="max-w-4xl mx-auto px-6">
+
+    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
+
+      Ready to Write Your
+      <span class="blue-text">
+        Next Chapter
+      </span>
+      ?
+
+    </h2>
+
+    <p class="text-gray-300 text-lg leading-9 mt-7 max-w-2xl mx-auto">
+
+      Let’s plan the journey you’ve been dreaming of.
+      One conversation, endless possibilities.
+
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-5 mt-12">
+
+      <a
+        href="https://wa.me/918796163086?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-yellow-400 hover:bg-yellow-500 hover:scale-105 transition text-black font-extrabold px-9 py-4 rounded-lg inline-flex items-center justify-center gap-3"
+      >
+
+        <i data-lucide="message-circle"></i>
+
+        Chat on WhatsApp
+
+      </a>
+
+      <!-- Send Email Button -->
+<a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=travelwithtourza@gmail.com&su=Inquiry%20from%20Tourza%20Website"
+  target="_blank"
+  class="border border-blue-400 hover:bg-blue-600 hover:scale-105 transition duration-300 text-white font-bold px-9 py-4 rounded-lg inline-flex items-center justify-center"
+>
+  Send an Email
+</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#020817] text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+
+          <img
+            src="logo.png"
+            alt="Tourza Logo"
+            class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 flex-shrink-0"
+          >
+
+          <h2 class="text-white text-2xl font-extrabold tracking-wide">
+            Tourza
+          </h2>
+
+        </div>
+
+        <p class="text-sm leading-8 text-gray-400">
+          Extraordinary travel experiences crafted for every explorer. From authentic budget stays to premium getaways, we make the world accessible.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-4 text-sm">
+
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            travelwithtourza@gmail.com
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +91 9217547722, +91 87961 63086
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Gurugram, Haryana, India
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Newsletter
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-5 leading-7">
+          Get exclusive travel updates and curated destination inspiration.
+        </p>
+
+        <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+
+          <input id="newsletter-email"
+            type="email"
+            placeholder="Your email"
+            class="w-full bg-[#0f172a] border border-gray-700 px-4 py-3 outline-none"
+          />
+
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition px-5 font-semibold">
+            Subscribe
+          </button>
+
+        </form>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 mt-6">
+
+          <a href="https://www.instagram.com/travelwithtourza" target="_blank" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="insta-icon.png" alt="Instagram icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+          <a href="https://wa.me/919217547722?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="whatsapp-icon.png" alt="WhatsApp icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+
+      <p>
+        © 2026 Tourza. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+
+        <a href="#" class="hover:text-white">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-white">
+          Terms & Conditions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('newsletter-email');
+    if (emailInput) {
+      alert('Thank you for subscribing to Tourza! Check your email soon.');
+      emailInput.value = '';
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+    
+    if (!menuButton || !mobileNav) return;
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileNav.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuButton.contains(e.target)) {
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

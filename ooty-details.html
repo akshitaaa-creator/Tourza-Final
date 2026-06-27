@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Ooty: Charming Ooty Hills | Tourza</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    body{
+      font-family:'Manrope', sans-serif;
+      background:#020617;
+      color:white;
+    }
+
+    .serif{
+      font-family:'Playfair Display', serif;
+    }
+
+    .navbar-gradient{
+      background: linear-gradient(to right, #081226, #132850);
+    }
+
+    .footer-gradient{
+      background: linear-gradient(to right, #020817, #07142d);
+    }
+
+    .info-card{
+      background:#0f172a;
+      box-shadow:0 15px 40px rgba(0,0,0,0.14);
+    }
+
+    .hero-image{
+      transition:0.45s ease;
+    }
+
+    .hero-image:hover{
+      transform:scale(1.01);
+    }
+
+  
+    .mobile-nav{
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 80px);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-nav.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-full border-2 border-yellow-400 overflow-hidden">
+          <img src="logo.png" width="500" height="500" style="image-rendering: -webkit-optimize-contrast;" class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 shadow-sm" alt="Tourza logo">
+        </div>
+
+        <span class="text-white text-2xl font-extrabold tracking-wide">
+          Tourza
+        </span>
+
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-10 text-white text-sm font-bold">
+
+        <a href="index.html" class="hover:text-blue-300 transition">
+          Home
+        </a>
+
+        <a href="tours.html" class="text-yellow-400">
+          Tours
+        </a>
+
+        <a href="about.html" class="hover:text-blue-300 transition">
+          About
+        </a>
+
+        <a href="services.html" class="hover:text-blue-300 transition">
+          Services
+        </a>
+
+        <a href="contact.html" class="hover:text-blue-300 transition">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- Button -->
+      <a
+        href="contact.html"
+        class="hidden md:flex bg-blue-600 hover:bg-blue-700 transition text-white px-7 py-3 rounded-full text-sm font-extrabold"
+      >
+        Book Now
+      </a>
+
+      <!-- Mobile -->
+      <button class="mobile-menu-button md:hidden text-white" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+      <div class="mobile-nav md:hidden mt-4 rounded-3xl bg-[#081226]/95 px-5 py-5 text-white shadow-xl">
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="block hover:text-blue-300 transition">Home</a>
+          <a href="tours.html" class="block hover:text-blue-300 transition">Tours</a>
+          <a href="about.html" class="block hover:text-blue-300 transition">About</a>
+          <a href="services.html" class="block hover:text-blue-300 transition">Services</a>
+          <a href="contact.html" class="block hover:text-blue-300 transition">Contact</a>
+          <a href="contact.html" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-extrabold mt-3">Book Now</a>
+        </nav>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ================= MAIN SECTION ================= -->
+
+<section class="py-14 md:py-20">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Hero Image -->
+    <div class="overflow-hidden rounded-2xl shadow-2xl">
+
+      <img
+        src="ooty.jpg"
+        class="hero-image w-full h-[320px] md:h-[600px] object-cover"
+        alt="Charming Ooty Hills"
+      />
+
+    </div>
+
+    <!-- Heading -->
+    <div class="mt-14">
+
+      <p class="uppercase tracking-[5px] text-[#c9a45d] text-sm font-extrabold mb-5">
+        6 DAYS
+      </p>
+
+      <h1 class="serif text-4xl md:text-6xl font-bold text-white leading-tight">
+        Charming Ooty Hills
+      </h1>
+
+      <p class="text-gray-300 text-lg leading-9 mt-8 max-w-5xl">
+        Discover the "Queen of Hill Stations." From the heritage toy train ride to the mist-covered tea estates of Coonoor, this journey is a refreshing escape into the heart of the Nilgiris.
+      </p>
+
+    </div>
+
+    <!-- ================= CARDS ================= -->
+
+    <div class="grid lg:grid-cols-2 gap-8 mt-16">
+
+      <!-- ================= ITINERARY CARD ================= -->
+
+      <div class="info-card rounded-3xl p-8 md:p-10 text-white">
+
+        <!-- Heading -->
+        <div class="flex items-center gap-4 mb-10">
+
+          <div class="w-14 h-14 rounded-full bg-[#132850] flex items-center justify-center">
+
+            <i data-lucide="map" class="w-6 h-6 text-[#d9b060]"></i>
+
+          </div>
+
+          <h2 class="text-3xl font-extrabold">
+            Itinerary
+          </h2>
+
+        </div>
+
+        <!-- Days -->
+        <div class="space-y-6 text-[15px] leading-8">
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 1:
+            </span>
+
+            <span class="text-gray-200">
+              Arrival in Ooty & evening stroll through the Tibetan Market and Ooty Lake.
+            </span>
+
+          </div>
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 2:
+            </span>
+
+            <span class="text-gray-200">
+              Heritage Day: A ride on the UNESCO Nilgiri Mountain Railway (Toy Train) followed by a visit to the Botanical Gardens.
+            </span>
+
+          </div>
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 3:
+            </span>
+
+            <span class="text-gray-200">
+              Panoramic Views: Visit Doddabetta Peak (the highest point) and the Tea Factory & Museum.
+            </span>
+
+          </div>
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 4:
+            </span>
+
+            <span class="text-gray-200">
+              Coonoor Excursion: Explore Sim's Park, Lamb's Rock, and Dolphin's Nose for breathtaking valley views.
+            </span>
+
+          </div>
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 5:
+            </span>
+
+            <span class="text-gray-200">
+              Filming Locations: A trip to Pykara Lake, the 9th Mile shooting spot, and Pine Forests.
+            </span>
+
+          </div>
+
+          <div>
+
+            <span class="text-[#d9b060] font-extrabold">
+              Day 6:
+            </span>
+
+            <span class="text-gray-200">
+              Morning breakfast at the hotel, some local chocolate shopping, and departure.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= INCLUSIONS CARD ================= -->
+
+      <div class="info-card rounded-3xl p-8 md:p-10 text-white">
+
+        <!-- Heading -->
+        <div class="flex items-center gap-4 mb-10">
+
+          <div class="w-14 h-14 rounded-full bg-[#132850] flex items-center justify-center">
+
+            <i data-lucide="badge-check" class="w-6 h-6 text-[#d9b060]"></i>
+
+          </div>
+
+          <h2 class="text-3xl font-extrabold">
+            Inclusions
+          </h2>
+
+        </div>
+
+        <!-- List -->
+        <ul class="space-y-6 text-gray-200 text-[15px] leading-8">
+
+          <li class="flex items-start gap-4">
+
+            <span class="text-[#d9b060] mt-2">•</span>
+
+            5 Nights in a cozy heritage-style boutique hotel or cottage.
+
+          </li>
+
+          <li class="flex items-start gap-4">
+
+            <span class="text-[#d9b060] mt-2">•</span>
+
+            Daily breakfast and traditional Nilgiri-style dinner.
+
+          </li>
+
+          <li class="flex items-start gap-4">
+
+            <span class="text-[#d9b060] mt-2">•</span>
+
+            Full-day sightseeing in a private vehicle.
+
+          </li>
+
+          <li class="flex items-start gap-4">
+
+            <span class="text-[#d9b060] mt-2">•</span>
+
+            Entrance fees to the Botanical Garden and Tea Museum.
+
+          </li>
+
+          <li class="flex items-start gap-4">
+
+            <span class="text-[#d9b060] mt-2">•</span>
+
+            Assistance with Toy Train ticket bookings (subject to availability).
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- ================= CTA BUTTON ================= -->
+
+    <div class="flex justify-center mt-16">
+
+      <a
+        href="contact.html"
+        class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 transition text-black font-extrabold text-lg px-10 py-5 rounded-full shadow-xl"
+      >
+
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+
+        Request a Quote
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#020817] text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+
+          <img
+            src="logo.png"
+            alt="Tourza Logo"
+            class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 flex-shrink-0"
+          >
+
+          <h2 class="text-white text-2xl font-extrabold tracking-wide">
+            Tourza
+          </h2>
+
+        </div>
+
+        <p class="text-sm leading-8 text-gray-400">
+          Extraordinary travel experiences crafted for every explorer. From authentic budget stays to premium getaways, we make the world accessible.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-4 text-sm">
+
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            travelwithtourza@gmail.com
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +91 9217547722, +91 87961 63086
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Gurugram, Haryana, India
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Newsletter
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-5 leading-7">
+          Get exclusive travel updates and curated destination inspiration.
+        </p>
+
+        <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+
+          <input id="newsletter-email"
+            type="email"
+            placeholder="Your email"
+            class="w-full bg-[#0f172a] border border-gray-700 px-4 py-3 outline-none rounded-l-lg"
+          />
+
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition px-5 rounded-r-lg font-bold">
+            Subscribe
+          </button>
+
+        </form>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 mt-6">
+
+          <a href="https://www.instagram.com/travelwithtourza" target="_blank" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="insta-icon.png" alt="Instagram icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+          <a href="https://wa.me/918796163086?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="whatsapp-icon.png" alt="WhatsApp icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+
+      <p>
+        © 2026 Tourza. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+
+        <a href="#" class="hover:text-white">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-white">
+          Terms & Conditions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('newsletter-email');
+    if (emailInput) {
+      alert('Thank you for subscribing to Tourza! Check your email soon.');
+      emailInput.value = '';
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+    
+    if (!menuButton || !mobileNav) return;
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileNav.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuButton.contains(e.target)) {
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

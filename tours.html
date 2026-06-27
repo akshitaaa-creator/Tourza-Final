@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tourza | Signature Tours</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Premium Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+
+    body{
+      font-family: 'Manrope', sans-serif;
+      background: #f4f4f4;
+      color: #111827;
+    }
+
+    .navbar-gradient{
+      background: linear-gradient(to right, #081226, #132850);
+    }
+
+    .footer-gradient{
+      background: linear-gradient(to right, #020817, #07142d);
+    }
+
+    .tour-card{
+      transition: all 0.35s ease;
+    }
+
+    .tour-card:hover{
+      transform: translateY(-6px);
+    }
+
+    .tour-card img{
+      transition: 0.5s ease;
+    }
+
+    .tour-card:hover img{
+      transform: scale(1.05);
+    }
+
+    .tour-overlay{
+      background: linear-gradient(
+      to top,
+      rgba(2,8,23,0.96),
+      rgba(2,8,23,0.78),
+      rgba(2,8,23,0.15)
+      );
+    }
+
+  
+    .mobile-nav{
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 80px);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+
+    .mobile-nav.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-full border-2 border-yellow-400 overflow-hidden">
+          <img src="logo.png" width="500" height="500" style="image-rendering: -webkit-optimize-contrast;" class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400" alt="Tourza logo">
+        </div>
+
+        <span class="text-white text-2xl font-extrabold tracking-wide">
+          Tourza
+        </span>
+
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-10 text-white text-sm font-bold">
+
+        <a href="index.html" class="hover:text-blue-300 transition">
+          Home
+        </a>
+
+        <a href="tours.html" class="hover:text-blue-300 transition">
+          Tours
+        </a>
+
+        <a href="about.html" class="hover:text-blue-300 transition">
+          About
+        </a>
+
+        <a href="services.html" class="hover:text-blue-300 transition">
+          Services
+        </a>
+
+        <a href="contact.html" class="hover:text-blue-300 transition">
+          Contact
+        </a>
+
+      </nav>
+
+      <!-- Button -->
+      <a
+        href="contact.html"
+        class="hidden md:flex bg-blue-600 hover:bg-blue-700 transition text-white px-7 py-3 rounded-full text-sm font-extrabold"
+      >
+        Book Now
+      </a>
+
+      <!-- Mobile -->
+      <button class="mobile-menu-button md:hidden text-white" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+      <div class="mobile-nav md:hidden mt-4 rounded-3xl bg-[#081226]/95 px-5 py-5 text-white shadow-xl">
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="block hover:text-blue-300 transition">Home</a>
+          <a href="tours.html" class="block hover:text-blue-300 transition">Tours</a>
+          <a href="about.html" class="block hover:text-blue-300 transition">About</a>
+          <a href="services.html" class="block hover:text-blue-300 transition">Services</a>
+          <a href="contact.html" class="block hover:text-blue-300 transition">Contact</a>
+          <a href="contact.html" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-full text-sm font-extrabold mt-3">Book Now</a>
+        </nav>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ================= TOURS SECTION ================= -->
+
+<section class="py-28">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Heading -->
+    <div class="text-center mb-20">
+
+      <p class="uppercase tracking-[5px] text-[#b99859] text-sm font-bold mb-5">
+        Curated Experiences
+      </p>
+
+      <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight text-black">
+        Our Signature Tours
+      </h2>
+
+      <p class="text-gray-500 text-lg leading-9 max-w-3xl mx-auto mt-6">
+        Handpicked adventures designed to transform the way you see the world,
+        from international wonders to domestic treasures.
+      </p>
+
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ================= THAILAND ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative">
+
+          <img
+            src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80"
+            class="block h-[520px] w-full object-cover"
+            alt=""
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <!-- Content -->
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <!-- Tags -->
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                International
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Budget
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Amazing Thailand Escape
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              7 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• Bangkok City & Temple tours</li>
+              <li>• Coral Island speedboat excursion</li>
+              <li>• Safari World adventures</li>
+
+            </ul>
+
+            <a
+              href="thailand-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= KASHMIR ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative h-[520px]">
+
+          <img
+            src="kashmirr.jpg"
+            class="block h-full w-full object-cover"
+            alt=""
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Domestic
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Nature
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Serene Kashmir Valley
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              6 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• Iconic Shikara ride on Dal Lake</li>
+              <li>• Mughal Gardens heritage walk</li>
+              <li>• Budget excursion to Gulmarg</li>
+
+            </ul>
+
+            <a
+              href="kashmir-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= OOTY ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative">
+
+          <img
+            src="ooty.jpg"
+            class="block h-[520px] w-full object-cover"
+            alt=""
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Domestic
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Scenic
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Charming Ooty Hills
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              6 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• UNESCO Heritage Toy Train ride</li>
+              <li>• Ooty Lake & Botanical Gardens</li>
+              <li>• Doddabetta Peak panoramic views</li>
+
+            </ul>
+
+            <a
+              href="ooty-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition text-white px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= GOA ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative">
+
+          <img
+            src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1974&auto=format&fit=crop"
+            class="h-[520px] w-full object-cover"
+            alt="Goa Tour"
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Domestic
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Beach
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Goa India Beach Escape
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              5 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• Vibrant beaches & water sports</li>
+              <li>• Portuguese colonial heritage walk</li>
+              <li>• Sunset cruise on Mandovi River</li>
+
+            </ul>
+
+            <a
+              href="goa-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= ANDAMAN ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative">
+
+          <img
+            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1974&auto=format&fit=crop"
+            class="h-[520px] w-full object-cover"
+            alt="Andaman Tour"
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Domestic
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Beach
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Andaman and Nicobar Islands
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              7 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• Crystal clear beaches & snorkeling</li>
+              <li>• Cellular Jail light & sound show</li>
+              <li>• Glass boat ride at North Bay</li>
+
+            </ul>
+
+            <a
+              href="andaman-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= KERALA ================= -->
+
+      <div class="tour-card rounded-3xl overflow-hidden shadow-2xl relative">
+
+        <div class="overflow-hidden relative">
+
+          <img
+            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1974&auto=format&fit=crop"
+            class="h-[520px] w-full object-cover"
+            alt="Kerala Tour"
+          />
+
+          <div class="tour-overlay absolute inset-0"></div>
+
+          <div class="absolute bottom-0 left-0 p-7 text-white w-full">
+
+            <div class="flex gap-3 mb-5">
+
+              <span class="bg-[#6b552c] text-[#f5d084] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Domestic
+              </span>
+
+              <span class="bg-[#182b52] text-[#7eb4ff] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">
+                Nature
+              </span>
+
+            </div>
+
+            <h3 class="text-3xl font-extrabold mb-2">
+              Kerala God's Own Country
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              6 days
+            </p>
+
+            <ul class="space-y-3 text-gray-200 text-sm leading-7 mb-7">
+
+              <li>• Alleppey houseboat cruise</li>
+              <li>• Munnar tea plantation tour</li>
+              <li>• Kerala Ayurveda spa experience</li>
+
+            </ul>
+
+            <a
+              href="kerala-details.html"
+              class="inline-flex bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg font-bold"
+            >
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+      <!-- Popular Destinations -->
+      <div class="mt-16 rounded-[2rem] bg-white/70 border border-white/70 backdrop-blur-xl p-8 shadow-xl">
+
+        <h3 class="text-3xl md:text-4xl font-extrabold text-black mb-6">
+          More Popular Destinations We Cover
+        </h3>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Bali
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Gokarna
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Manali
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Shimla
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Kodaikanal
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Darjeeling
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Jaipur
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Udaipur
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Jaisalmer
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Varanasi
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Leh-Ladakh
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Rishikesh
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Spiti Valley
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Sikkim
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Kerala
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Coorg
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Jim Corbett
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Ranthambore
+          </span>
+          <span class="flex items-center gap-2 rounded-2xl border border-white/20 bg-white/30 px-4 py-3 text-sm text-black shadow-sm transition hover:border-yellow-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-yellow-400"></i>
+            Kaziranga
+          </span>
+        </div>
+
+      </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#020817] text-gray-300 pt-20 pb-10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+
+          <img
+            src="logo.png"
+            alt="Tourza Logo"
+            class="w-12 h-12 rounded-full object-contain bg-white p-1 border-2 border-yellow-400 flex-shrink-0"
+          >
+
+          <h2 class="text-white text-2xl font-extrabold tracking-wide">
+            Tourza
+          </h2>
+
+        </div>
+
+        <p class="text-sm leading-8 text-gray-400">
+          Extraordinary travel experiences crafted for every explorer. From authentic budget stays to premium getaways, we make the world accessible.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Quick Links
+        </h3>
+
+        <ul class="space-y-4 text-sm">
+
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Contact Info
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            travelwithtourza@gmail.com
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +91 9217547722, +91 87961 63086
+          </p>
+
+          <p class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Gurugram, Haryana, India
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+
+        <h3 class="text-white text-lg font-extrabold mb-6">
+          Newsletter
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-5 leading-7">
+          Get exclusive travel updates and curated destination inspiration.
+        </p>
+
+        <form id="newsletter-form" class="flex" onsubmit="handleNewsletterSubmit(event)">
+
+          <input id="newsletter-email"
+            type="email"
+            placeholder="Your email"
+            class="w-full bg-[#0f172a] border border-gray-700 px-4 py-3 outline-none"
+          />
+
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition px-5 font-semibold">
+            Subscribe
+          </button>
+
+        </form>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 mt-6">
+
+          <a href="https://www.instagram.com/travelwithtourza" target="_blank" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="insta-icon.png" alt="Instagram icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+          <a href="https://wa.me/919217547722?text=Hello%20Tourza!%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" rel="noopener noreferrer" class="inline-flex w-10 h-10 items-center justify-center">
+            <img src="whatsapp-icon.png" alt="WhatsApp icon" class="w-10 h-10 rounded-full object-contain p-2 bg-white/10 hover:bg-white/20 transition-all" />
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-gray-500">
+
+      <p>
+        © 2026 Tourza. All rights reserved.
+      </p>
+
+      <div class="flex gap-6">
+
+        <a href="#" class="hover:text-white">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-white">
+          Terms & Conditions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('newsletter-email');
+    if (emailInput) {
+      alert('Thank you for subscribing to Tourza! Check your email soon.');
+      emailInput.value = '';
+    }
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+    
+    if (!menuButton || !mobileNav) return;
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileNav.classList.toggle('active');
+      menuButton.setAttribute('aria-expanded', isOpen);
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (mobileNav.classList.contains('active') && 
+          !mobileNav.contains(e.target) && 
+          !menuButton.contains(e.target)) {
+        mobileNav.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
